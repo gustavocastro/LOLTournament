@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="content">
+        <form (submit)="onAddNewChampion($event)" class="newChampForm">
+            <div class="input-group group-name">
+                <label for="name">Name</label>
+                <input type="text" [(ngModel)]="newChampion.name" name="name" id="name">
+            </div>
+            <div class="input-group group-picture">
+                <label for="photo">Champion Picture URL</label>
+                <input type="text" [(ngModel)]="newChampion.photo" name="photo" id="photo">
+            </div>
+            <div class="group-button">
+                <button 
+                type="submit"
+                [disabled]="!newChampion.name">New Champion</button>
+            </div>
+        </form>
+        
+        <h2>Select 4 Champions</h2>
+        <div class="list">
+            <app-champion
+                *ngFor="let champion of champions"
+                [champion]="champion"
+                (championSelected)="onChampionSelected(champion)"
+                (removeChampion)="onChampionRemoved($event)">
+            </app-champion>
+
+            <!-- Filling empty space from the last row -->
+            <div class="filling-empty-space-childs"></div>
+            <div class="filling-empty-space-childs"></div>
+            <div class="filling-empty-space-childs"></div>
+        </div>
+
+        <div class="button-div">
+            <app-button
+                [label]="'Start'"
+                [link]="'/tournament'"
+                [disabled]="disabled"></app-button>
+        </div>
+    </div>
+
+    <app-spinner *ngIf="loadingService.loading"></app-spinner>
+</div>

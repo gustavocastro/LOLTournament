@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="step">
+    <div 
+      *ngFor="let battle of battles; let i = index;"
+      class="battle">
+        <app-opponent
+          *ngFor="let champion of battle"
+          [opponent]="champion"
+          [disabledOpponent]="champion.disabled"
+          (click)="onSelectOpponent(champion, battle, i)">
+        </app-opponent>
+    </div>
+  </div>
+
+  <div class="step">
+    <app-opponent
+      *ngFor="let champion of finalOpponents; let i = index;"
+      [opponent]="champion"
+      [disabledOpponent]="champion.disabled"
+      (click)="onSelectWinner(champion, i)">
+    </app-opponent>
+  </div>
+    
+  <div class="step">
+    <app-opponent [opponent]="winner"></app-opponent>
+  </div>
+</div>
+
+<div class="button">
+  <app-button
+    [link]="'/champions'"
+    [label]="'Select Champions'">
+  </app-button>
+</div>
+
+<div class="winner" *ngIf="winner.id">
+  <img src="../../assets/images/award.png" alt="Winner Award">
+  <h4>{{winner.name}} now rules Valoran.</h4>
+  <p>After a long time under the fear of intense conflicts, Valoran has now a new leader.
+    Elected by every living being, {{winner.name}} promises to restore the peace
+    for the whole humanity.
+  </p>
+</div>

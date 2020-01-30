@@ -1,0 +1,128 @@
+@import '../../shared/css/variables';
+
+h2 {
+    border-left: 6px solid $gold;
+    padding-left: 12px;
+    margin-top: 55px;
+}
+
+.container {
+    padding-bottom: 25px;
+}
+
+.list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.filling-empty-space-childs {
+    width: 24%;
+    height: 0;
+}
+
+app-champion {
+    flex: 0 1 24%;
+}
+
+.button-div {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.newChampForm {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+
+    button {
+        width: 100%;
+        padding: 8px 0;
+        background-color: rgba($buttonblue, .2);
+        border: 2px solid $buttonblue;
+        border-radius: 6px;
+        color: $buttonblue;
+        font-weight: bold;
+        cursor: pointer;
+        transition: .5s all;
+
+        &:hover {
+            background-color: rgba($buttonblue, .35);
+        }
+
+        &:disabled {
+            opacity: .5;
+            cursor: not-allowed;
+        }
+    }
+}
+
+.input-group {
+    .label {
+        display: block;
+    }
+
+    input {
+        display: block;
+        width: 100%;
+        border: none;
+        background-color: $mediumgrey;
+        color: $brightgrey;
+        font-size: 1.5em;
+        padding: 4px 15px;
+    }
+}
+
+.group-name {
+    flex: 0 1 20%;
+}
+
+.group-picture {
+    flex: 0 1 60%;
+}
+
+.group-button {
+    flex: 0 1 15%;
+    align-self: flex-end;
+}
+
+@media (max-width: 985px) {
+    app-champion {
+        flex: 0 1 32%;
+    }
+
+    .filling-empty-space-childs {
+        width: 32%;
+    }
+}
+
+@media (max-width: 715px) {
+    .group-name {
+        flex: 0 1 35%;
+    }
+
+    .group-button {
+        flex: 0 1 100%;
+        margin-top: 15px;
+        text-align: center;
+
+        button {
+            width: 150px;
+        }
+    }
+
+    app-champion {
+        flex: 0 1 49%;
+    }
+
+    .filling-empty-space-childs {
+        width: 49%;
+    }
+}
+
+@media (max-width: 490px) {
+    app-champion {
+        flex: 0 1 99%;
+    }
+}

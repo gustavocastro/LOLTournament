@@ -1,0 +1,15 @@
+@import '../../../shared/css/variables';
+
+.opponent {
+    background-color: $mediumgrey;
+    padding: 2px 12px;
+    margin-bottom: 5px;
+    border-bottom: 2px solid $lightgrey;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .5s all;
+
+    &:hover {
+        background-color: lighten($mediumgrey, 3);
+    }
+}

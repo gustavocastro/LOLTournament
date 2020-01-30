@@ -1,0 +1,18 @@
+<div class="card" [ngClass]="{'selectedClass': selectedClass}">
+  <div 
+    [ngStyle]="{'background-image': 'url('+ championImage +')'}"
+    class="cover">
+  </div>
+
+  <div class="content">
+    <h4>{{champion.name}}</h4>
+    
+    <button 
+      (click)="onSelectChampion(champion)"
+      class="btn-action action-select">Select</button>
+    <button 
+      [disabled]="!champion.addedByUser"
+      (click)="onRemoveChampion(champion)"
+      class="btn-action action-remove">Remove</button>
+  </div>
+</div>

@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+@import './shared/css/variables';
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans|Merriweather:900|Roboto+Mono&display=swap');
+
+@font-face {
+    font-family: 'Friz Quadrata';
+    src: url("./assets/fonts/FrizQuadrataBold.otf") format("opentype");
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: $darkgrey;
+    color: $lightgrey;
+    font-family: $body-font;
+}
+
+.container {
+    width: 95vw;
+    margin: auto;
+    margin-top: 12vh; 
+}

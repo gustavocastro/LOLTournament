@@ -1,0 +1,52 @@
+@import '../../shared/css/variables';
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav a {
+    color: $brightgrey;
+    padding: 0 0 0 5px;
+    transition: .5s all;
+
+    &:first-child {
+        margin-right: 20px;
+    }
+}
+
+h3 {
+    color: $lightgrey;
+}
+
+.toolbar {
+    position: absolute;
+    width: 100vw;
+    height: 6vh;
+    top: 0;
+    padding: 0 5vw;
+    display: flex;
+    font-family: $h3-font;
+    text-transform: uppercase;
+    font-size: .65em;
+    letter-spacing: 4px;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 15px solid $gold;
+    background-color: $darkgrey;
+}
+
+.active {
+    border-left: 4px solid $gold;
+}
+
+@media (max-width: 520px) {
+    .toolbar {
+        display: block;
+    }
+
+    .brand, nav {
+        width: 100%;
+        text-align: center;
+    }
+}

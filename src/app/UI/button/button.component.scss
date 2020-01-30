@@ -1,0 +1,22 @@
+@import '../../../shared/css/variables';
+
+button {
+    text-decoration: none;
+    background-color: rgba($gold, .2);
+    color: $gold;
+    border: 2px solid $gold;
+    border-radius: 6px;
+    font-weight: bold;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: .5s all;
+
+    &:hover {
+        background-color: rgba($gold, .35)
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        opacity: .5;
+    }
+}

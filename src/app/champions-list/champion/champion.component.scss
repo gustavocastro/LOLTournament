@@ -1,0 +1,64 @@
+@import '../../../shared/css/variables';
+
+.card {
+    background-color: $mediumgrey;
+    display: flex;
+    margin-bottom: 15px;
+    border-radius: 6px;
+
+    h4 {
+        margin: 10px 8px 35px 8px;
+    }
+
+    .cover {
+        width: 40%;
+        background-image: $lightgrey;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+    }
+}
+
+.content {
+    width: 100%;
+}
+
+.btn-action {
+    width: 50%;
+    padding: 4px 0;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .5s all;
+}
+
+.action-select {
+    background-color: rgba($buttonblue, .2);
+    border: 1px solid $buttonblue;
+    color: $buttonblue;
+
+    &:hover {
+        background-color: rgba($buttonblue, .35);
+    }
+}
+
+.action-remove {
+    background-color: rgba($buttonred, .2);
+    border: 1px solid $buttonred;
+    border-bottom-right-radius: 6px;
+    color: $buttonred;
+
+    &:hover {
+        background-color: rgba($buttonred, .35);
+    }
+
+    &:disabled {
+        opacity: .5;
+        cursor: not-allowed;
+    }
+}
+
+.selectedClass {
+    border: 1px solid $buttonblue;
+}
